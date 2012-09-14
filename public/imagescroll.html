@@ -125,12 +125,12 @@ var pagewidth = 1024;
             e.preventDefault();
            // 过渡效果写在CSS中
 
-//            item.moveX += e.originalEvent.touches[0].pageX
-//                    - item.lastX;
-//
-//            item.css('-webkit-transform','translateX('
-//                    + (item.moveX+item.oldX)
-//                    + 'px)');
+            item.moveX = e.originalEvent.touches[0].pageX
+                    - item.lastX;
+
+            item.css('-webkit-transform','translateX('
+                    + (item.moveX+item.oldX)
+                    + 'px)');
 
 
 
@@ -149,6 +149,24 @@ var pagewidth = 1024;
 
         //手指离开执行移动操作
         if (e.type == 'touchend') {
+//(item.moveX<100&&item.moveX >0)|| (item.moveX>-100&&item.moveX <0)
+            if(item.moveX>341 || item.moveX<-341){
+                if(item.moveX<0){
+                    item.oldX = item.oldX - 1024;
+                } else {
+                    item.oldX = item.oldX + 1024;
+                }
+
+                item.css('-webkit-transform','translateX('
+                        + (item.oldX)
+                        + 'px)');
+                return;
+            } else {
+                item.css('-webkit-transform','translateX('
+                        + (item.oldX)
+                        + 'px)');
+                return;
+            }
 
 
 //
