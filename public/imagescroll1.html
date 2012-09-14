@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML5图片滚动效果</title>
+    <!--页面编码-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--initial-scale初始缩放比例,maximum-scale允许缩放的最大比例-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <!--设置工程是否全屏运行-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--设置状态栏的style(black-translucent,black,default)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--用户是否可以手动缩 (no,yes)-->
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <!--设置页面宽度-->
+    <!--<meta name="viewport" content="width=320"/>-->
+
+    <!--页面最小宽度是1024时加载style.css-->
+
+    <link rel="stylesheet" href="stylesheets/ipad_h_style1.css">
+
+    <script type="text/javascript" src='javascripts/jquery-1.8.1.min.js'></script>
+    <script>
+
+
+
+        window.onload = function() {
+            //$("#slides .inner").width($("#overflow").width()*5);
+
+            //$("#slides .inner article").style.width  = $("body").style.width;
+        };
+
+        //
+
+    </script>
+</head>
+<body>
+
+<div id="slides">
+
+    <div id="overflow">
+
+        <div class="inner">
+
+
+
+        </div> <!-- .inner -->
+
+    </div> <!-- #overflow -->
+
+</div> <!-- #slides -->
+
+
+
+<script type="text/javascript">
+
+    //        document.getElementById('inner').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('inner size:' + event.targetTouches.length);
+    //        },false);
+    //
+    //        document.getElementById('outer').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('outter size:' + event.targetTouches.length);
+    //        },false);
+
+    //        document.getElementById('inner').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('inner size:' + event.touches.length);
+    //        },false);
+    //
+    //        document.getElementById('outer').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('outter size:' + event.touches.length);
+    //        },false);
+
+    //下面代码实现拖拽。
+    var item = $('#slides .inner');
+    item.oldX = 0;
+    item.oldY = 0;
+    item.on('touchstart touchmove touchend', function (e) {
+
+        if (e.originalEvent.targetTouches.length > 1) {
+            return false;
+        }
+        if (e.type == 'touchstart') {
+            console.log('touchend被触发');
+            item.moveX = 0;
+            item.moveY = 0;
+            item.lastX = e.originalEvent.touches[0].pageX;
+            item.lastY = e.originalEvent.touches[0].pageY;
+        }
+
+        if (e.type == 'touchmove') {
+            e.preventDefault();
+            console.log('touchend被触发');
+            item.moveX += e.originalEvent.touches[0].pageX
+                    - item.lastX;
+            item.moveY += e.originalEvent.touches[0].pageY
+                    - item.lastY;
+            item.css('-webkit-transform','translate('
+                    + (item.moveX+item.oldX)
+                    + 'px,'+ (item.moveY+item.oldY)
+                    + 'px)');
+            item.lastX = e.originalEvent.touches[0].pageX;
+            item.lastY = e.originalEvent.touches[0].pageY;
+        }
+        if (e.type == 'touchend') {
+            console.log('touchend被触发');
+            item.oldX = item.moveX+item.oldX;
+            item.oldY = item.moveY+item.oldY;
+        }
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

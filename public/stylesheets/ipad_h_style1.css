@@ -1,0 +1,37 @@
+body {
+    font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #4f6b72;
+    background: #E6EAE9;
+    width:1024px;
+    margin: auto;
+    -webkit-text-size-adjust:none;
+    -webkit-user-select: none;                /* disable cut copy paste */
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+    -webkit-appearance: none;
+    overflow: hidden;
+}
+
+
+
+/* Slider begin */
+
+
+#overflow {
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+
+}
+
+#slides .inner {
+    color: #f00000;
+    background: #f44000;
+
+     width: 500px;
+    height: 768px;
+    -webkit-transition-property:padding-left;
+    -webkit-transition-duration:500ms;
+    line-height: 0;
+}

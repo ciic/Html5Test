@@ -1,7 +1,57 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: #E6EAE9;
+    width: 100%;
+
+    }
+
+
+
+/* Slider begin */
+
+#sliders {
+    text-align: center;
 }
+#overflow {
+     width: 1000px;
+    overflow: hidden;
+}
+
+article img {
+    width: 1000px;
+}
+
+#slides .inner {
+   /* width: 500%;*/
+    line-height: 0;
+}
+
+#slides  article {
+/* width: 20%;*/
+ float: left;
+}
+/* Slider end */
+
+div{
+    float: left;
+    column-count:2;
+   // position:fixed;
+   // top:0;
+   // left:0;
+   // bottom:0;
+   // right:0;
+    //z-index:-1;
+   // display:-webkit-box;
+    //-webkit-box-pack:center;
+    //-webkit-box-align:center;
+}
+div > img {
+  //  height:100%;
+   // width:100%;
+    border:0;
+}
+
 
 a {
   color: #00B7FF;

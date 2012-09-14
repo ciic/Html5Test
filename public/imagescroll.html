@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML5图片滚动效果</title>
+    <!--页面编码-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--initial-scale初始缩放比例,maximum-scale允许缩放的最大比例-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <!--设置工程是否全屏运行-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--设置状态栏的style(black-translucent,black,default)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--用户是否可以手动缩 (no,yes)-->
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <!--设置页面宽度-->
+    <!--<meta name="viewport" content="width=320"/>-->
+
+    <!--页面最小宽度是1024时加载style.css-->
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="stylesheets/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width:700px) and (orientation:portrait)" href="stylesheets/ipad_v_style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width:700px) and (orientation:landscape)" href="stylesheets/ipad_h_style.css">
+
+    <script type="text/javascript" src='javascripts/jquery-1.8.1.min.js'></script>
+    <script>
+
+var pagenum = 5;
+var curpage = 1;
+
+var pagewidth = 1024;
+
+        window.onload = function() {
+            pagewidth=$("#overflow").width().valueOf();
+            $("#slides .inner").width(pagewidth*pagenum);
+
+            //$("#slides .inner article").style.width  = $("body").style.width;
+        };
+
+        //
+
+    </script>
+</head>
+<body>
+
+<div id="slides">
+
+    <div id="overflow">
+
+        <div class="inner">
+
+            <article>
+                <img src="images/demo/CouldDragonByBjzaba.png">
+            </article>
+
+            <article>
+                <img src="images/demo/MountainFortByBjzaba.png">
+            </article>
+
+            <article>
+                <img src="images/demo/MountainOutpostByBjzaba.png">
+            </article>
+
+            <article>
+                <img src="images/demo/CliffsByBjzaba.png">
+            </article>
+
+            <article>
+                <img src="images/demo/HillFortByBjzaba.png">
+            </article>
+
+        </div> <!-- .inner -->
+
+    </div> <!-- #overflow -->
+
+</div> <!-- #slides -->
+
+
+
+<script type="text/javascript">
+
+    //        document.getElementById('inner').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('inner size:' + event.targetTouches.length);
+    //        },false);
+    //
+    //        document.getElementById('outer').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('outter size:' + event.targetTouches.length);
+    //        },false);
+
+    //        document.getElementById('inner').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('inner size:' + event.touches.length);
+    //        },false);
+    //
+    //        document.getElementById('outer').addEventListener('touchmove', function (event) {
+    //            event.preventDefault();
+    //            alert('outter size:' + event.touches.length);
+    //        },false);
+
+    //下面代码实现拖拽。
+    var item = $('#slides   .inner');
+    item.oldX = 0;
+    var isLeft = true;
+    //item.oldY = 0;
+    item.on('touchstart touchmove touchend', function (e) {
+        if (e.originalEvent.targetTouches.length > 1) {
+            return false;
+        }
+//手指点下，初始化数据
+        if (e.type == 'touchstart') {
+            //手指放下
+
+
+
+
+            item.moveX = 0;//$("#overflow").width();
+
+            item.lastX = e.originalEvent.touches[0].pageX;
+
+
+        }
+//手指正在滑动，判断左右以及展示过渡效果
+        if (e.type == 'touchmove') {
+            //移动 事件传递下来
+            e.preventDefault();
+           // 过渡效果写在CSS中
+
+//            item.moveX += e.originalEvent.touches[0].pageX
+//                    - item.lastX;
+//
+//            item.css('-webkit-transform','translateX('
+//                    + (item.moveX+item.oldX)
+//                    + 'px)');
+
+
+
+            if(e.originalEvent.touches[0].pageX
+                    - item.lastX>0){
+
+                //item.moveX = pagewidth;
+                isLeft = false;
+
+            }else{
+                //item.moveX = -pagewidth;
+                isLeft = true;
+            }
+
+        }
+
+        //手指离开执行移动操作
+        if (e.type == 'touchend') {
+
+
+//
+//            if(item.moveX<100){
+//                item.css('-webkit-transform','translateX('
+//                        + (item.oldX)
+//                        + 'px)');
+//                return;
+//            }
+
+
+            if(!isLeft){
+
+                item.moveX = pagewidth;
+
+
+            }else{
+                item.moveX = -pagewidth;
+
+            }
+
+
+
+            //判断第一页与最后一页
+            if(curpage==1&&!isLeft){
+                //alert("已经是首页");
+                return;
+            }
+            if(curpage==pagenum&&isLeft){
+               // alert("已经是最后一页");
+
+                return;
+            }
+
+
+
+    item.css('-webkit-transform','translateX('
+            + (item.moveX+item.oldX)
+            + 'px)');
+
+    item.oldX = item.moveX+item.oldX;
+    if(isLeft){
+        curpage++;
+    }else {
+        curpage--;
+    }
+
+
+
+
+            
+           //alert(curpage);
+
+
+
+
+        }
+    });
+
+</script>
+
+
+
+
+</body>
+</html>
