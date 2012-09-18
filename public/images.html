@@ -23,10 +23,10 @@
     <script type="text/javascript" src='javascripts/jquery-1.8.1.min.js'></script>
     <script>
 
-var pagenum = 5;
-var curpage = 1;
+        var pagenum = 5;
+        var curpage = 1;
 
-var pagewidth = 1024;
+        var pagewidth = 1024;
 
         window.onload = function() {
             pagewidth=$("#overflow").width().valueOf();
@@ -77,25 +77,7 @@ var pagewidth = 1024;
 
 <script type="text/javascript">
 
-    //        document.getElementById('inner').addEventListener('touchmove', function (event) {
-    //            event.preventDefault();
-    //            alert('inner size:' + event.targetTouches.length);
-    //        },false);
-    //
-    //        document.getElementById('outer').addEventListener('touchmove', function (event) {
-    //            event.preventDefault();
-    //            alert('outter size:' + event.targetTouches.length);
-    //        },false);
 
-    //        document.getElementById('inner').addEventListener('touchmove', function (event) {
-    //            event.preventDefault();
-    //            alert('inner size:' + event.touches.length);
-    //        },false);
-    //
-    //        document.getElementById('outer').addEventListener('touchmove', function (event) {
-    //            event.preventDefault();
-    //            alert('outter size:' + event.touches.length);
-    //        },false);
 
     //下面代码实现拖拽。
     var item = $('#slides   .inner');
@@ -123,7 +105,7 @@ var pagewidth = 1024;
         if (e.type == 'touchmove') {
             //移动 事件传递下来
             e.preventDefault();
-           // 过渡效果写在CSS中
+            // 过渡效果写在CSS中
 
             item.moveX = e.originalEvent.touches[0].pageX
                     - item.lastX;
@@ -133,22 +115,13 @@ var pagewidth = 1024;
                     + 'px)');
 
 
-//
-//            if(item.moveX>0){
-//
-//                //item.moveX = pagewidth;
-//                isLeft = false;
-//
-//            }else{
-//                //item.moveX = -pagewidth;
-//                isLeft = true;
-//            }
+
 
         }
 
         //手指离开执行移动操作
         if (e.type == 'touchend') {
-//(item.moveX<100&&item.moveX >0)|| (item.moveX>-100&&item.moveX <0)
+
             if(item.moveX>pagewidth/3 || item.moveX<-pagewidth/3){
                 if(item.moveX<0){
                     if(curpage<pagenum){
@@ -167,71 +140,9 @@ var pagewidth = 1024;
 
             }
 
-
-//            //判断第一页与最后一页
-//            if(curpage==1&&item.moveX<0){
-//                //alert("已经是首页");
-//                return;
-//            }
-//            if(curpage==pagenum&&item.moveX>0){
-//                // alert("已经是最后一页");
-//
-//                return;
-//            }
-
-                item.css('-webkit-transform','translateX('
-                        + (item.oldX)
-                        + 'px)');
-
-
-
-                //return;
-
-
-
-//
-//            if(item.moveX<100){
-//                item.css('-webkit-transform','translateX('
-//                        + (item.oldX)
-//                        + 'px)');
-//                return;
-//            }
-
-
-//            if(!isLeft){
-//
-//                item.moveX = pagewidth;
-//
-//
-//            }else{
-//                item.moveX = -pagewidth;
-//
-//            }
-//
-//
-//
-//
-//
-//
-//
-//    item.css('-webkit-transform','translateX('
-//            + (item.moveX+item.oldX)
-//            + 'px)');
-//
-//    item.oldX = item.moveX+item.oldX;
-
-
-//
-//            if(isLeft){
-//                curpage++;
-//            }else {
-//                curpage--;
-//            }
-
-            
-           //alert(curpage);
-
-
+            item.css('-webkit-transform','translateX('
+                    + (item.oldX)
+                    + 'px)');
 
 
         }

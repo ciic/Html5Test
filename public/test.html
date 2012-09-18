@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//    function a (){
+//
+//
+//        this.name="abc";
+//
+//
+//    }
+////共享函数
+//    a.prototype.abc = function(){
+//
+//
+//        console.log(this.name);
+//
+//
+//    }
+//
+//
+//    var aa = new a();
+//
+//    aa.abc();
+//
+//
+//console.log(this);
+//
+//    function testThis(){
+//
+//
+//        console.log(this);
+//    }
+//testThis();//执行函数，没有new非构造函数
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    function A(){
+//        this.name="a";
+//        this.getName = function(){
+//
+//            return this.name;
+//        }
+//    }
+//    var aa = new a();
+//    aa.getName();
+//
+//
+//    function B(){
+//
+//        this.name = 'b';
+//
+//    }
+//    var b = new B();
+//
+//    b.getName=aa.getName;//属性
+//    console(b.getName());
+
+
+    function User(){
+        var _name = "a";
+        return {
+            getName:function(){
+                return _name;
+            },
+            setName:function(name){
+                _name = name;
+
+            }
+
+        };
+    }
+var user = new User();
+        user.setName("aaaaaa");
+        console.log("user.getname:"+user.getName());
+
+
+
+//闭包的问题
+for(var i =0;i<10;i++ ){//单线程会先执行for，所以只打印10次i的最后一个值
+
+    setTimeout(function(){
+       console.log(i);
+    },0);
+
+
+}
+
+
+//闭包问题的解决
+for(var i =0;i<10;i++ ){//单线程会先执行for，所以只打印10次i的最后一个值
+(function(i){//子执行函数，让i不是引用而是传参数
+        setTimeout(function(){
+            console.log(i);
+        },0);
+    })(i);
+
+
+
+
+}
+
+//arguments
+
+    function ArgTest(a,b){
+
+        var x= arguments[0];
+        x="aaaaa";
+
+        console.log(arguments[0]);//打印参数a
+    }
+    ArgTest("a","b")
+
+// call用法
+//function Person(){
+//
+//    this.address="";
+//
+//
+//}
+//    Person.prototype.setAddress = function (city,street,postcode){
+//
+//        this.address = {
+//            city:city,
+//        street:street,
+//        postcode:postcode
+//        }
+//console.log(this.address);
+//
+//    };
+//
+//    var p  = new Person();
+//
+
+//动态赋值call,xxx的用法
+function Product(name,price){
+    this.name = name;
+    this.price = price;
+    console.log(this);
+}
+
+
+   function Food(name,price){
+       Product.call(this,arguments[0],price);
+       this.category = "食品";
+   }
+    Food.prototype = new Product();
+
+    var food = new Food("牛奶","5");
+food2 = new Food("牛奶","3");
+
+
+
+
+
+    var PersonManager = {
+        fire:function(target,context){
+            console.log('在'+context+'向'+target+'开火');
+        }
+    };
+
+    PersonManager.execute = function (name){
+        return PersonManager[name]&&PersonManager[name].apply(PersonManager,Array.prototype.slice.call(arguments,1));//silice取参数从1开始
+    }
+PersonManager.execute('fire','骑兵','河边');
+</script>
+
+</body>
+</html>
+
