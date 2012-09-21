@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <title>产品框变高</title>
+    <meta name="author" content="走起来" />
+    <meta name="copyright" content="www.css3train.com" />
+    <!-- style begin -->
+    <style>
+        * { padding: 0; margin: 0; }
+        li { list-style: none; }
+        img { border: none; }
+        body {background:#fff;font: 12px/1.5 tahoma,arial,宋体b8b\4f53;}
+        a{text-decoration:none;color:#36C;}
+        a:hover {color: #F60;text-decoration: underline;}
+        #prolist{width: 748px;}
+        .list-content {margin-top: 0;position: relative;_position: none;top:50px;}
+        .main-view-list {width: 748px;margin-left: 8px;}
+        .list-item-combine {margin-left: 5px;padding-bottom: 9px;_padding-bottom: 6px;padding-right: 0;}
+        .list-item {position: relative;display: inline-block;width: 232px;height: auto;margin: -1px -6px 0 0;padding: 0 10px 20px 9px;vertical-align: top;}
+        .list-ibox {border: 1px solid white;zoom: 1;}
+        .title {width: 218px;height: 34px;overflow: hidden;padding: 240px 6px 5px;line-height: 1.5;font-weight: normal;position: relative;}
+        .title a {display:table-cell;font-size:12px;}
+        .pic {position: absolute;left: 9px;top: 0;padding: 5px;border: 1px solid #DDD;}
+        .s220, .s220 a {width: 220px;height: 220px;}
+        .love-hate-oprator {background-color: white;height: 30px;position: absolute;width: 220px;}
+        .hidden {display: none;}
+        .add-fast-table-pic {height: 16px;width: 16px;position: absolute;left: 4px;top: 5px;_top: 4px;top: 3px;cursor: pointer;}
+        .s220 .add-fast-table-text {color: gray;cursor: pointer;text-align: left;display: inline;font-size: 12px;position: absolute;line-height: 16px;left: 97px;outline: none;height: 16px;width: auto;top: 5px;_top: 4px;top: 3px;background:url('../images/ico.png') 0 -41px no-repeat;padding-left:20px;}
+        .s220 .add-love-text {width: auto;background-position: 0 -160px;color: gray;cursor: pointer;text-align: left;height: 16px;line-height: 16px;padding: 0 0 0 20px;font-size: 12px;position: absolute;left: 148px;top: 5px;_top: 4px;top: 3px;background:url('../images/ico.png') 0 -61px no-repeat;}
+        .attribute {width: 218px;padding: 0 6px 5px 6px;overflow: hidden;color: #555;position: relative;}
+        .attribute .price,.attribute .seller{display: inline;float: left;width: 150px;}
+        .attribute .seller a {color: #555;}
+        .attribute .ship,.attribute .place {display: inline;float: right;width: 68px;line-height: 26px;_line-height: 26px;text-align: right;}
+        .legend {height: 20px;overflow: hidden;margin-top: 5px;padding: 0 5px;}
+        .quicklook-grid {width: 218px;min-height: 100px;_height: 100px;background: white;border: 1px solid #FEC794;border-top: none;position: absolute;padding: 6px;z-index: 9999;}
+        .quicklook-grid .lgi {position: relative;min-height: 26px;_height: 26px;margin-top: 8px;}
+        .quicklook-grid .lgi-b {padding: 3px 5px;display: block;background: #FFF5EC;float: right;border: 1px solid #FFE2C7;}
+        .h {color: #F50!important;}
+        .quicklook-grid li {margin: 4px 0;}
+        .pic .hate {display: none;}
+        .trade-num {float: right;margin-right: 4px;margin-top: -20px;_margin-top: -20px;}
+        .attribute .price .money {padding-left: 10px;font-weight: bold;font-size: 16px;color: #F30;background:url('../images/ico.png') 0 -20px no-repeat;}
+        .attribute .price del.money {color: #666;display: inline-block;font-size: 12px;font-weight: normal;line-height: 20px;margin-left: 5px;vertical-align: 1px;text-decoration: line-through;}
+        .ww-light a span {display: none;}
+        .back{position:absolute;right:20px;top:10px;color:#000;text-shadow:1px 1px 3px #999999;text-decoration:none;z-index:99999;}
+    </style>
+    <!-- style end -->
+    <script type="text/javascript" src="http://www.css3train.com/js/zhjcom.js"></script>
+</head>
+<body>
+<!-- html begin -->
+<div id="prolist">
+    <div id="J_ListContent" class="list-content">
+        <ul class="main-view-list">
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">蝶臣 2012夏季新款 韩版时尚修身蝴蝶结雪纺短袖大码...</a>
+                    </h3>
+                    <div class="pic s220">
+                        <!-- 顶部 喜欢 加入 -->
+                        <div class="love-hate-oprator hidden" style="opacity: 0.9; ">
+                            <div class="add-fast-table-pic">
+                            </div>
+                            <a class="add-fast-table-text" href="javascript:void(0)" hidefocus="true">喜欢</a>
+                            <a href="#" class="add-love-text">加入专辑</a>
+                        </div>
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="../images/1.jpg" width=220 height=220>
+                        </a>
+                        <span class="hate">不喜欢</span>
+                    </div>
+                    <span class="trade-num">最近成交18338笔</span>
+                    <!-- 价格 阿里旺旺 -->
+                    <ul class="attribute">
+                        <li class="price">
+                            <span class="normal"><em class="money">78.01</em><del class="money">108.00</del></span>
+                        </li>
+                        <li class="ship">运费:0.0</li>
+                        <li class="seller">
+                            <a data-spm="d21" href=" http://www.css3train.com" target="_blank">蝶臣服饰旗舰...</a>
+              <span class="ww-light ww-small">
+                <a href="http://www.css3train.com" target="_blank" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。"><span>http://www.css3train.com</span></a>
+              </span>
+                        </li>
+                        <li class="place" style="line-height:16px;">浙江杭州</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">蝶臣 2012夏季新款 韩版时尚修身蝴蝶结雪纺短袖大码...</a>
+                    </h3>
+                    <div class="pic s220">
+                        <!-- 顶部 喜欢 加入 -->
+                        <div class="love-hate-oprator hidden" style="opacity: 0.9; ">
+                            <div class="add-fast-table-pic">
+                            </div>
+                            <a class="add-fast-table-text" href="javascript:void(0)" hidefocus="true">喜欢</a>
+                            <a href="#" class="add-love-text">加入专辑</a>
+                        </div>
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="../images/1.jpg" width=220 height=220>
+                        </a>
+                        <span class="hate">不喜欢</span>
+                    </div>
+                    <span class="trade-num">最近成交18338笔</span>
+                    <!-- 价格 阿里旺旺 -->
+                    <ul class="attribute">
+                        <li class="price">
+                            <span class="normal"><em class="money">78.01</em><del class="money">108.00</del></span>
+                        </li>
+                        <li class="ship">运费:0.0</li>
+                        <li class="seller">
+                            <a data-spm="d21" href=" http://www.css3train.com" target="_blank">蝶臣服饰旗舰...</a>
+              <span class="ww-light ww-small">
+                <a href="http://www.css3train.com" target="_blank" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。"><span>http://www.css3train.com</span></a>
+              </span>
+                        </li>
+                        <li class="place" style="line-height:16px;">浙江杭州</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">蝶臣 2012夏季新款 韩版时尚修身蝴蝶结雪纺短袖大码...</a>
+                    </h3>
+                    <div class="pic s220">
+                        <!-- 顶部 喜欢 加入 -->
+                        <div class="love-hate-oprator hidden" style="opacity: 0.9; ">
+                            <div class="add-fast-table-pic">
+                            </div>
+                            <a class="add-fast-table-text" href="javascript:void(0)" hidefocus="true">喜欢</a>
+                            <a href="#" class="add-love-text">加入专辑</a>
+                        </div>
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="../images/1.jpg" width=220 height=220>
+                        </a>
+                        <span class="hate">不喜欢</span>
+                    </div>
+                    <span class="trade-num">最近成交18338笔</span>
+                    <!-- 价格 阿里旺旺 -->
+                    <ul class="attribute">
+                        <li class="price">
+                            <span class="normal"><em class="money">78.01</em><del class="money">108.00</del></span>
+                        </li>
+                        <li class="ship">运费:0.0</li>
+                        <li class="seller">
+                            <a data-spm="d21" href=" http://www.css3train.com" target="_blank">蝶臣服饰旗舰...</a>
+              <span class="ww-light ww-small">
+                <a href="http://www.css3train.com" target="_blank" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。"><span>http://www.css3train.com</span></a>
+              </span>
+                        </li>
+                        <li class="place" style="line-height:16px;">浙江杭州</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 加长部分 -->
+<div id="J_QlookPop" class="quicklook-grid" style="z-index: 9995; min-height: 100px; left:9px; display: none; top:376px; visibility: visible; ">
+    <div class="lgi clearfix">
+    <span class="lgi-b">预计
+      <span class="h">3天</span>
+      到北京(约<span class="h">13小时内</span>发货)
+    </span>
+        <s></s>
+    </div>
+    <div class="tbskip">
+        <ul class="clearfix">
+            <li>描述相符：4.8分
+                <span style="color:red">高于同行业25.46%</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- html end -->
+<script type="text/javascript">
+    (function(){
+        ZHJ.ppt = function(id){
+            var aLiAll = id.getElementsByTagName('li');
+            var aLi = [];
+            var aTop = ZHJ.getByClass(id,'love-hate-oprator hidden');
+            var aBottom = ZHJ.getByClass(id,'list-ibox');
+            var aImgBorder = ZHJ.getByClass(id,'pic s220');
+            for(var i=0;i<aLiAll.length;i++){
+                if(aLiAll[i].className == 'list-item list-item-combine list-item-flag') aLi.push(aLiAll[i]);
+            }
+            for(var j=0;j<aLi.length;j++){
+                var k=0;
+                (function(j){
+                    aLi[j].onmouseover = function(){//LI 移上
+                        ZHJ.ppt.display_block(j);
+                        k=j;
+                    };
+                    $('J_QlookPop').onmouseover = function(){//隐藏div 移上
+                        ZHJ.ppt.display_block(k);
+                    };
+                    aLi[j].onmouseout = function(){//LI 移下
+                        ZHJ.ppt.display_hidden(j);
+                    };
+                    $('J_QlookPop').onmouseout = function(){//隐藏div 移下
+                        ZHJ.ppt.display_hidden(k);
+                    };
+                })(j);
+            }
+            ZHJ.ppt.display_block = function(j){//LI div 移上
+                ZHJ.cssStyle(aImgBorder[j],'border','1px solid #FEC794');//图片边框
+                ZHJ.cssStyle(aImgBorder[j],'borderBottom','none');//图片边框
+                ZHJ.cssStyle(aBottom[j],'border','1px solid #FEC794');//原来价格这部分改变边框颜色
+                aTop[j].className='love-hate-oprator';//喜欢编辑栏显示
+                ZHJ.cssStyle($('J_QlookPop'),'display','block');//显示下边多余的部分
+                j==0?ZHJ.cssStyle($('J_QlookPop'),'left',251*j+(17-j*2)):ZHJ.cssStyle($('J_QlookPop'),'left',251*j+(17-j*2));//计算下边多余部分的位置
+            };
+            ZHJ.ppt.display_hidden = function(j){//LI div 移下
+                ZHJ.cssStyle(aImgBorder[j],'border','1px solid #ddd');//图片边框
+                ZHJ.cssStyle(aBottom[j],'border','1px solid #fff');//原来价格这部分改变边框颜色
+                aTop[j].className='love-hate-oprator hidden';
+                ZHJ.cssStyle($('J_QlookPop'),'display','none');
+            };
+        };
+        ZHJ.classes.doWhileExists('J_ListContent',ZHJ.ppt);
+    })();
+</script>
+</body>
+</html>

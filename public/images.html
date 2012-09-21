@@ -48,23 +48,23 @@
         <div class="inner">
 
             <article>
-                <img src="images/demo/CouldDragonByBjzaba.png">
+                <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg">
             </article>
 
             <article>
-                <img src="images/demo/MountainFortByBjzaba.png">
+                <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c45.jpg">
             </article>
 
             <article>
-                <img src="images/demo/MountainOutpostByBjzaba.png">
+                <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c46.jpg">
             </article>
 
             <article>
-                <img src="images/demo/CliffsByBjzaba.png">
+                <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c47.jpg">
             </article>
 
             <article>
-                <img src="images/demo/HillFortByBjzaba.png">
+                <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c48.jpg">
             </article>
 
         </div> <!-- .inner -->
@@ -82,7 +82,10 @@
     //下面代码实现拖拽。
     var item = $('#slides   .inner');
     item.oldX = 0;
-    //var isLeft = true;
+
+    //防止闪动
+    item.css('-webkit-transform-style','preserve-3d');
+
     //item.oldY = 0;
     item.on('touchstart touchmove touchend', function (e) {
         if (e.originalEvent.targetTouches.length > 1) {
@@ -95,9 +98,10 @@
 
 
 
-            item.moveX = 0;//$("#overflow").width();
+            item.moveX = 0;
 
             item.lastX = e.originalEvent.touches[0].pageX;
+
 
 
         }
@@ -110,9 +114,11 @@
             item.moveX = e.originalEvent.touches[0].pageX
                     - item.lastX;
 
-            item.css('-webkit-transform','translateX('
+
+
+            item.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
                     + (item.moveX+item.oldX)
-                    + 'px)');
+                    + 'px)','-webkit-transition':'all 0.5s ease-out'});
 
 
 
@@ -122,7 +128,7 @@
         //手指离开执行移动操作
         if (e.type == 'touchend') {
 
-            if(item.moveX>pagewidth/3 || item.moveX<-pagewidth/3){
+            if(item.moveX>pagewidth/5 || item.moveX<-pagewidth/5){
                 if(item.moveX<0){
                     if(curpage<pagenum){
                         item.oldX = item.oldX - pagewidth;
@@ -140,9 +146,9 @@
 
             }
 
-            item.css('-webkit-transform','translateX('
+            item.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
                     + (item.oldX)
-                    + 'px)');
+                    + 'px)','-webkit-transition':'all 0.5s ease-out'});
 
 
         }

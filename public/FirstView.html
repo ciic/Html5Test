@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML5图片滚动效果</title>
+    <!--页面编码-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--initial-scale初始缩放比例,maximum-scale允许缩放的最大比例-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <!--设置工程是否全屏运行-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--设置状态栏的style(black-translucent,black,default)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--用户是否可以手动缩 (no,yes)-->
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <!--设置页面宽度-->
+    <!--<meta name="viewport" content="width=320"/>-->
+
+    <!--页面最小宽度是1024时加载style.css-->
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="stylesheets/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width:700px) and (orientation:portrait)"
+          href="stylesheets/ipad_v_style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width:700px) and (orientation:landscape)"
+          href="stylesheets/firstview_h_style.css">
+
+    <script type="text/javascript" src='javascripts/jquery-1.8.1.min.js'></script>
+    <script src="javascripts/pagecontrol.js"></script>
+    <script src="javascripts/imagescroll.js"></script>
+    <script>
+
+        var articlelist = {"items":[
+            {"ircEvent":"PRIVMSG", "method":"newURI", "regex":"^http://.*"},
+            {"ircEvent":"PRIVMSG", "method":"deleteURI", "regex":"^delete.*"},
+            {"ircEvent":"PRIVMSG", "method":"randomURI", "regex":"^random.*"}
+        ]
+        };
+
+
+
+
+
+        window.onload = function () {
+
+
+            var topimages =   $("#overflow_top .inner_top")
+            for(var i =0;i<4;i++){
+
+                var $div =   $('<div class="page_top"><img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"></div>');
+                topimages.append($div);
+            }
+
+
+          var firstlist =   $("#J_ListContent1 .main-view-list")
+for(var i =0;i<4;i++){
+
+    var $li =   $('<li class="list-item list-item-combine list-item-flag"><div class="list-ibox"><h3 class="title"><a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a></h3><div class="pic s220"> <a data-spm="d11" href=" http://www.css3train.com" target="_blank"><img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"width=220 height=220></a></div></div></li>');
+    firstlist.append($li);
+}
+
+
+
+            var firstlist2 =   $("#J_ListContent2 .main-view-list")
+            for(var i =0;i<12;i++){
+
+                var $li =   $('<li class="list-item list-item-combine list-item-flag"><div class="list-ibox"><h3 class="title"><a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a></h3><div class="pic s220"> <a data-spm="d11" href=" http://www.css3train.com" target="_blank"><img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"width=220 height=220></a></div></div></li>');
+                firstlist2.append($li);
+            }
+
+
+
+
+            $("#overflow .inner").width($("#overflow").width().valueOf() *  $("#overflow .inner  .page").length);
+
+            $("#overflow_top .inner_top").width($("#overflow_top").width().valueOf() *  $("#overflow_top .inner_top  .page_top").length);
+
+        };
+
+        //
+
+    </script>
+
+</head>
+<body>
+
+
+
+    <div id="overflow">
+
+        <div class="inner">
+
+        <article class="page">
+
+
+
+
+<div style="width: 900px;height: 375px;" id="firstdiv">
+    <div id="overflow_top">
+
+        <div class="inner_top">
+
+
+
+        </div> <!-- .inner_top -->
+
+    </div> <!-- #overflow_top -->
+
+
+
+</div>
+
+
+
+            <div id="J_ListContent1" class="list-content">
+                <ul class="main-view-list">
+
+
+                </ul>
+            </div>
+
+
+        </article>
+        <article class="page">
+
+
+            <div id="J_ListContent2" class="list-content">
+                <ul class="main-view-list">
+
+                </ul>
+            </div>
+
+
+        </article>
+        <article class="page">
+
+            <div id="J_ListContent3" class="list-content">
+                <ul class="main-view-list">
+                    <li class="list-item list-item-combine list-item-flag">
+                        <div style="position:relative">
+                            <div style="width:220px;height:220px;background: #ffffff;position:absolute;left:0;top:0 ;-webkit-transform:rotate(5deg);z-index:0;">
+
+                            </div>
+
+
+
+                            <div class="list-ibox" style="position:absolute;">
+                                <h3 class="title">
+                                    <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                                </h3>
+
+                                <div class="pic s220">
+
+
+                                    <!-- 产品图片 -->
+                                    <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                                        <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                             width=220 height=220>
+                                    </a>
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-item list-item-combine list-item-flag">
+                        <div style="position:relative">
+                            <div style="width:220px;height:220px;background: #ffffff;position:absolute;left:0;top:0 ;-webkit-transform:rotate(5deg);z-index:1;"></div>
+                            <div style="width:220px;height:220px;background: #ffffff;position:absolute;left:0;top:0"></div>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </article>
+
+        </div> <!-- .inner -->
+
+    </div> <!-- #overflow -->
+
+
+
+
+
+
+
+
+</body>
+</html>

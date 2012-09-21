@@ -1,0 +1,573 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML5图片滚动效果</title>
+    <!--页面编码-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--initial-scale初始缩放比例,maximum-scale允许缩放的最大比例-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+    <!--设置工程是否全屏运行-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--设置状态栏的style(black-translucent,black,default)-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--用户是否可以手动缩 (no,yes)-->
+    <meta name="viewport" content="user-scalable=no, width=device-width"/>
+    <!--设置页面宽度-->
+    <!--<meta name="viewport" content="width=320"/>-->
+
+    <!--页面最小宽度是1024时加载style.css-->
+    <link rel="stylesheet" media="screen and (min-width: 1025px)" href="stylesheets/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width:700px) and (orientation:portrait)"
+          href="stylesheets/ipad_v_style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (min-width:700px) and (orientation:landscape)"
+          href="stylesheets/main_h_style.css">
+
+    <script type="text/javascript" src='javascripts/jquery-1.8.1.min.js'></script>
+    <script src="javascripts/page.js"></script>
+    <script>
+
+        var articlelist = {"items":[
+            {"ircEvent":"PRIVMSG", "method":"newURI", "regex":"^http://.*"},
+            {"ircEvent":"PRIVMSG", "method":"deleteURI", "regex":"^delete.*"},
+            {"ircEvent":"PRIVMSG", "method":"randomURI", "regex":"^random.*"}
+        ]
+        };
+
+        var pagenum = 5;
+        var curpage = 1;
+
+        var pagewidth = 1024;
+
+        var  pagewidth_top=600;
+
+        window.onload = function () {
+            pagewidth = $("#overflow").width().valueOf();
+            $("#slides .inner").width(pagewidth * pagenum);
+
+
+            pagewidth_top = $("#overflow_top").width().valueOf();
+            $("#slides_top .inner_top").width(pagewidth_top * pagenum);
+
+            //$("#slides .inner article").style.width  = $("body").style.width;
+        };
+
+        //
+
+    </script>
+
+</head>
+<body>
+
+<div id="slides">
+
+<div id="overflow">
+
+<div class="inner">
+<article class="page">
+
+
+
+    <div id="slides_top" >
+
+        <div id="overflow_top">
+
+            <div class="inner_top">
+
+                <article class="page_top">
+                    <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg">
+                </article>
+
+                <article class="page_top">
+                    <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c45.jpg">
+                </article>
+
+                <article class="page_top">
+                    <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c46.jpg">
+                </article>
+
+                <article class="page_top">
+                    <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c47.jpg">
+                </article>
+
+                <article class="page_top">
+                    <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c48.jpg">
+                </article>
+
+            </div> <!-- .inner -->
+
+        </div> <!-- #overflow -->
+
+    </div> <!-- #slides -->
+
+
+
+
+
+
+
+
+
+    <div id="J_ListContent2" class="list-content">
+        <ul class="main-view-list">
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</article>
+<article class="page">
+
+
+    <div id="J_ListContent1" class="list-content">
+        <ul class="main-view-list">
+            <li class="list-item list-item-combine list-item-flag">
+
+
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">我是王岳，哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 图片 -->
+                        <a data-spm="d11" href="" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg">
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href="" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg">
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div class="list-ibox">
+                    <h3 class="title">
+                        <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                    </h3>
+
+                    <div class="pic s220">
+
+
+                        <!-- 产品图片 -->
+                        <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                            <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                 width=220 height=220>
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</article>
+<article class="page">
+
+    <div id="J_ListContent3" class="list-content">
+        <ul class="main-view-list">
+            <li class="list-item list-item-combine list-item-flag">
+                <div style="position:relative">
+                    <div style="width:220px;height:220px;background: #ffffff;position:absolute;left:0;top:0 ;-webkit-transform:rotate(5deg);z-index:0;">
+
+                    </div>
+
+
+
+                    <div class="list-ibox"style="position:absolute;">
+                        <h3 class="title">
+                            <a data-spm="d11" href="http://www.css3train.com" class="J_ItemDesc">中国举行演习哈哈哈</a>
+                        </h3>
+
+                        <div class="pic s220">
+
+
+                            <!-- 产品图片 -->
+                            <a data-spm="d11" href=" http://www.css3train.com" target="_blank">
+                                <img src="http://images.china.cn/attachement/jpg/site1000/20120918/001ec949fc8d11c24f0c44.jpg"
+                                     width=220 height=220>
+                            </a>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </li>
+            <li class="list-item list-item-combine list-item-flag">
+                <div style="position:relative">
+                    <div style="width:220px;height:220px;background: #ffffff;position:absolute;left:0;top:0 ;-webkit-transform:rotate(5deg);z-index:1;"></div>
+                    <div style="width:220px;height:220px;background: #ffffff;position:absolute;left:0;top:0"></div>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+
+</article>
+
+
+
+
+</div>
+<!-- .inner -->
+
+</div>
+<!-- #overflow -->
+
+</div>
+<!-- #slides -->
+
+
+<script type="text/javascript">
+
+
+    //下面代码实现拖拽。
+    var item = $('#slides   .inner');
+
+    item.css('-webkit-transform-style','preserve-3d');
+    item.oldX = 0;
+
+
+
+
+
+    //var isLeft = true;
+    //item.oldY = 0;
+    item.on('touchstart touchmove touchend', function (e) {
+        if (e.originalEvent.targetTouches.length > 2) {
+            return false;
+        }
+//手指点下，初始化数据
+        if (e.type == 'touchstart') {
+            //手指放下
+
+
+            item.moveX = 0;//$("#overflow").width();
+
+            item.lastX = e.originalEvent.touches[0].pageX;
+
+
+
+        }
+//手指正在滑动，判断左右以及展示过渡效果
+        if (e.type == 'touchmove') {
+            //移动 事件传递下来
+
+            e.preventDefault();
+            // 过渡效果写在CSS中
+
+            item.moveX = e.originalEvent.touches[0].pageX
+                    - item.lastX;
+
+
+//            item.curmoveX = e.originalEvent.touches[0].pageX-item.curmoveX;
+//
+//
+//            if(item.curmoveX<0.2||item.curmoveX>-0.2){
+//
+//                if (item.moveX > pagewidth / 3 || item.moveX < -pagewidth / 3) {
+//                    if (item.moveX < 0) {
+//                        if (curpage < pagenum) {
+//                            item.oldX = item.oldX - pagewidth;
+//                            curpage++;
+//
+//                        }
+//
+//                    } else {
+//                        if (curpage > 1) {
+//                            item.oldX = item.oldX + pagewidth;
+//                            curpage--;
+//                        }
+//
+//                    }
+//
+//                }
+//
+//
+//
+//
+//                item.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
+//                        + (item.oldX)
+//                        + 'px)','-webkit-transition':'all 0.5s ease-out'});
+//            }
+
+//            item.css('-webkit-transform','translateX('
+//                    + (item.moveX+item.oldX)
+//                    + 'px)');
+            item.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
+                    + (item.moveX+item.oldX)
+                    + 'px)','-webkit-transition':'all 0.5s ease-out'});
+
+
+        }
+
+        //手指离开执行移动操作
+        if (e.type == 'touchend') {
+
+            if (item.moveX > pagewidth / 3 || item.moveX < -pagewidth / 3||(item.moveX>0&&item.moveX < 2) || (item.moveX<0&&item.moveX > -2)) {
+                if (item.moveX < 0) {
+                    if (curpage < pagenum) {
+                        item.oldX = item.oldX - pagewidth;
+                        curpage++;
+
+                    }
+
+                } else {
+                    if (curpage > 1) {
+                        item.oldX = item.oldX + pagewidth;
+                        curpage--;
+                    }
+
+                }
+
+            }
+
+
+
+
+            item.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
+                    + (item.oldX)
+                    + 'px)','-webkit-transition':'all 0.5s ease-out'});
+
+
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+    //下面代码实现拖拽。
+    var item_top = $('#slides_top   .inner_top');
+    item_top.oldX = 0;
+    //var isLeft = true;
+    //item.oldY = 0;
+    item_top.on('touchstart touchmove touchend', function (e) {
+        if (e.originalEvent.targetTouches.length > 1) {
+            return false;
+        }
+
+//手指点下，初始化数据
+        if (e.type == 'touchstart') {
+            //手指放下
+
+
+            item_top.moveX = 0;//$("#overflow").width();
+
+            item_top.lastX = e.originalEvent.touches[0].pageX;
+
+
+        }
+//手指正在滑动，判断左右以及展示过渡效果
+        if (e.type == 'touchmove') {
+            //移动 事件传递下来
+           //e.preventDefault();
+
+            e.stopPropagation();
+            // 过渡效果写在CSS中
+
+            item_top.moveX = e.originalEvent.touches[0].pageX
+                    - item_top.lastX;
+
+//            item.css('-webkit-transform','translateX('
+//                    + (item.moveX+item.oldX)
+//                    + 'px)');
+
+
+            item_top.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
+                    + (item_top.moveX + item_top.oldX)
+                    + 'px)','-webkit-transition':'all 0.5s ease-out'});
+
+
+        }
+
+        //手指离开执行移动操作
+        if (e.type == 'touchend') {
+
+            if (item_top.moveX > pagewidth_top / 5 || item_top.moveX < -pagewidth_top / 5) {
+                if (item_top.moveX < 0) {
+                    if (curpage < pagenum) {
+                        item_top.oldX = item_top.oldX - pagewidth_top;
+                        curpage++;
+
+                    }
+
+                } else {
+                    if (curpage > 1) {
+                        item_top.oldX = item_top.oldX + pagewidth_top;
+                        curpage--;
+                    }
+
+                }
+
+            }
+
+
+
+            item_top.css({'-webkit-transform-style':'preserve-3d','-webkit-transform':'translateX('
+                    + (item_top.oldX)
+                    + 'px)','-webkit-transition':'all 0.5s ease-out'});
+
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
